@@ -1,0 +1,13 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent any
+    triggers { cron('0 17 * * *') }
+    stages {
+        stage('Invoke') {
+            steps {
+                sh "echo Go Home!"
+            }
+        }
+    }
+}
